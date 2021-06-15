@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Schedule</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
+    <link href='../lib/main.css' rel='stylesheet' />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.7.2/main.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.4/tailwind.min.css">
+    <script src='../lib/main.js'></script>
+</head>
+<body>
+            <div class="bg-cover flex h-screen w-screen justify" style="background-image: url('bgsample1.gif')">
+                <div class="flex grid grid-cols-12 h-auto w-auto gap-4 m-2">
+                    <div class="flex text-gray-500 text-6xl font-bold justify-center items-center h-16 w-64 rounded-md col-span-3 row-span-2 bg-transparent">
+                        L3A
+                    </div>
+                        <div class="pt-2">
+                            <button class="flex text-gray-500 font-bold justify-center items-center h-12 w-24 bg-transparent">
+                                HOME
+                            </button>
+                        </div>
+                            <div class="pt-2">
+                                <button class="flex text-gray-500 font-bold justify-center items-center h-12 w-24 bg-transparent">
+                                    ABOUT US
+                                </button>
+                            </div>
+                                <div class="pt-2">
+                                    <button class="flex text-gray-500 font-bold justify-center items-center h-12 w-24 bg-transparent">
+                                        TRACKING
+                                    </button>
+                                </div>
+                                    <div class="pt-2">
+                                        <button class="flex text-gray-500 font-extrabold underline justify-center items-center h-12 w-24 bg-transparent">
+                                            SCHEDULE
+                                        </button>
+                                    </div>
+                                        <div class="pt-2">
+                                            <button class="flex text-gray-500 font-bold justify-center items-center h-12 w-28 bg-transparent">
+                                                CONTACT US
+                                            </button>
+                                        </div>
+                                    <div class="pt-2 ml-14">
+                                        <button class="flex text-white font-bold justify-center items-center h-12 w-28 bg-green-300 border-2 rounded-md border-gray-400">
+                                            LOGIN
+                                        </button>
+                                    </div>
+                                <div class="pt-2 ml-20">
+                                    <button class="flex text-white font-bold justify-center items-center h-12 w-28 bg-green-300 border-2 rounded-md border-gray-400">
+                                        REGISTER
+                                    </button>
+                                </div>
+                            <div class="fixed inset-0">
+                                <div id="calendar"></div>
+                            </div>
+                    </div>
+                </div>
+        <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.7.2/main.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+    
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+        height: '100%',
+        expandRows: true,
+        slotMinTime: '08:00',
+        slotMaxTime: '20:00',
+        headerToolbar: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+        },
+        initialView: 'dayGridMonth',
+        initialDate: '2020-09-12',
+        navLinks: true, // can click day/week names to navigate views
+        editable: true,
+        selectable: true,
+        nowIndicator: true,
+        dayMaxEvents: true, // allow "more" link when too many events
+        events: [
+            {
+            title: 'All Day Event',
+            start: '2020-09-01',
+            },
+            {
+            title: 'Long Event',
+            start: '2020-09-07',
+            end: '2020-09-10'
+            },
+            {
+            groupId: 999,
+            title: 'Repeating Event',
+            start: '2020-09-09T16:00:00'
+            },
+            {
+            groupId: 999,
+            title: 'Repeating Event',
+            start: '2020-09-16T16:00:00'
+            },
+            {
+            title: 'Conference',
+            start: '2020-09-11',
+            end: '2020-09-13'
+            },
+            {
+            title: 'Meeting',
+            start: '2020-09-12T10:30:00',
+            end: '2020-09-12T12:30:00'
+            },
+            {
+            title: 'Lunch',
+            start: '2020-09-12T12:00:00'
+            },
+            {
+            title: 'Meeting',
+            start: '2020-09-12T14:30:00'
+            },
+            {
+            title: 'Happy Hour',
+            start: '2020-09-12T17:30:00'
+            },
+            {
+            title: 'Dinner',
+            start: '2020-09-12T20:00:00'
+            },
+            {
+            title: 'Birthday Party',
+            start: '2020-09-13T07:00:00'
+            },
+            {
+            title: 'Click for Google',
+            url: 'http://google.com/',
+            start: '2020-09-28'
+            }
+        ]
+        });
+    
+        calendar.render();
+    });
+    
+    </script>
+</body>
